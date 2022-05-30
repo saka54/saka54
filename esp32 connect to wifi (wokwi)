@@ -1,0 +1,19 @@
+#include<WiFi.h>
+
+const char* ssid = "Wokwi-GUEST";
+const char* pass = "";
+
+void setup(){
+  Serial.begin(115200);
+  WiFi.begin(ssid, pass);
+  while(WiFi.status() != WL_CONNECTED){
+    delay(100);
+    Serial.println(".");
+  }
+  Serial.println("WiFi Connected!");
+  Serial.println(WiFi.localIP());
+}
+
+void loop(){
+
+}
